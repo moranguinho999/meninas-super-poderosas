@@ -1,0 +1,124 @@
+/* Reset básico e centralização */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #120326; /* Fundo roxo bem escuro */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+/* Container central ocupando 80% da tela */
+.container {
+    width: 80%;
+    max-width: 1100px;
+    height: 500px;
+    background-color: #230d43; /* Roxo ligeiramente mais claro para contraste */
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Cabeçalho das abas */
+.tabs-header {
+    display: flex;
+    background-color: #1a0833;
+    border-bottom: 2px solid #34195c;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 20px;
+    background: none;
+    border: none;
+    color: #8f74b3;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    background-color: #28114b;
+    color: #ffffff;
+}
+
+.tab-btn.active {
+    color: #00ffcc; /* Destaque em tom ciano/neon */
+    background-color: #230d43;
+    border-bottom: 4px solid #00ffcc;
+}
+
+/* Área de conteúdo */
+.tabs-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab-panel {
+    display: none; /* Esconde por padrão */
+    width: 100%;
+    text-align: center;
+}
+
+.tab-panel.active {
+    display: block; /* Mostra apenas a ativa */
+    animation: surgimento Suave 0.4s ease-in-out;
+}
+
+.tab-panel h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #00ffcc;
+}
+
+.tab-panel p {
+    color: #b299d9;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+/* Layout do Cronômetro */
+.cronometro {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.caixa-tempo {
+    background-color: #32155c;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 120px;
+    font-size: 0.85rem;
+    color: #a78ed0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.caixa-tempo span {
+    display: block;
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+/* Animação simples de transição */
+@keyframes surgimentoSuave {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
